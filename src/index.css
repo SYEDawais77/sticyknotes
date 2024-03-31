@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  margin: 10px;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #fcf9e7;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.custom-sticky-note-form {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px;
+  background-color: #dd9a78;
+  justify-content: center;
+}
+
+.custom-sticky-note-input {
+  word-break: break-all;
+  word-wrap: break-word;
+  overflow: auto;
+  padding: 1px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+  margin-right: 1.5rem;
+  max-lines: 6;
+  min-height: 30px;
+}
+
+.custom-sticky-note-button {
+  background-color: #428bca;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.custom-sticky-note-button:hover {
+  background-color: #357ebd;
+}
+
+.sticky-notes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  row-gap: 8px;
+  column-gap: 1px;
+  justify-content: center;
+  margin: 10px auto;
+  width: 80%;
+  height: 480px;
+  padding: 30px;
+  background-image: url(./assets/step4.jpg);
+  background-repeat: round;
+  background-size: auto;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  max-height: 480px;
+  overflow-y: scroll;
+}
+.pin {
+  height: 18px;
+  width: 18px;
+  background-color: #e01313;
+  border-radius: 50%;
+  margin: 3px auto;
+}
+
+.note-text-area {
+  /* Remove default styles */
+  border: none;
+  outline: none;
+  background-color: transparent; /* Inherit background color from parent */
+  font-weight: 400; /* Inherit font weight from parent */
+  font-size: 1.2rem; /* Inherit font size from parent */
+  color: inherit; /* Inherit text color from parent */
+  resize: none; /* Disable resize functionality (optional) */
+  padding-bottom: 0; /* Remove default padding */
+  margin-bottom: 0; /* Remove default margin */
+  cursor: text; /* Indicate text editing on hover */
+}
+.sticky-note {
+  width: 160px;
+  height: 170px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  margin: 8px;
+  font-family: "The Girl Next Door", cursive;
+  padding-left: 10px;
+  background-color: #357ebd;
+}
+.sticky1 {
+  -webkit-transform: rotate(-3.5deg);
+  -moz-transform: rotate(-3.5deg);
+  transform: rotate(-3.5deg);
+  background-color: #cbfafa;
+}
+.sticky2 {
+  -webkit-transform: scale(0.9) translateY(-7%);
+  -ms-transform: scale(0.9) translateY(-7%);
+  transform: scale(0.9) translateY(-7%);
+  z-index: 1;
+  opacity: 0.8;
+  background-color: #facd;
+}
+
+.add-new-note-div {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ddd;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  text-align: center;
+  align-items: center;
+}
+
+.add-new-note-div:hover {
+  background-color: #ccc;
+}
+
+.add-new-note-div button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  font-size: 30px;
+  color: #333;
+  cursor: inherit;
+}
+
+/* Responsiveness for Smaller Screens */
+@media only screen and (max-width: 768px) {
+  .sticky-notes-container {
+    width: 60%; /* Increase container width on smaller screens */
+  }
+  .sticky-note {
+    width: calc(100% - 40px); /* Adjust note width for better fit */
+    
+  }
+}
+
+/* Responsiveness for Extra Small Screens */
+@media only screen and (max-width: 480px) {
+  .sticky-note {
+    width: 100%; /* Make notes full width on very small screens */
+  }
+}
